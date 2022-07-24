@@ -1,0 +1,23 @@
+.search {
+  height: 100vh;
+  margin-bottom: 30px;
+
+  &-books-bar {
+    padding: 20px;
+  }
+
+  &-books-input-wrapper {
+    padding: 10px;
+    box-shadow: 0 0 7px #0003;
+    width: 90%;
+    margin: auto;
+    border-radius: 5px;
+
+    input {
+      width: 100%;
+      padding: 10px;
+      outline: 0;
+      border: 0;
+    }
+  }
+}

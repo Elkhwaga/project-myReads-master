@@ -1,0 +1,54 @@
+.section-body {
+  padding: 20px 0;
+
+  .grid {
+    box-shadow: $box-shadow;
+    padding: 30px 0;
+  }
+
+  .book-details-img {
+    @include flex(center, space-around);
+    img {
+      width: 40%;
+    }
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  .book-details-info {
+    padding-right: 20px;
+
+    .book-details-item-title {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    .book-details-item-authors,
+    .book-details-item-description,
+    .category,
+    .language {
+      margin-bottom: 10px;
+    }
+
+    .book-details-item-description {
+      color: #5c5c5c;
+      line-height: 1.1;
+    }
+
+    .category span,
+    .language span {
+      padding-left: 5px;
+      font-style: italic;
+    }
+
+    .category span {
+      text-transform: lowercase;
+    }
+
+    .language span {
+      text-transform: uppercase;
+    }
+  }
+}

@@ -1,12 +1,15 @@
 import { BrowserRouter } from 'react-router-dom';
 import { AppProvider } from './context';
-import MainRoutes from './routers/Routes';
+
 import Footer from './components/Footer';
+import Home from './pages/Home';
+import MainRoutes from './routes/routes';
 
 function App() {
   return (
     <AppProvider>
       <BrowserRouter>
+        <Home />
         <MainRoutes />
         <Footer />
       </BrowserRouter>

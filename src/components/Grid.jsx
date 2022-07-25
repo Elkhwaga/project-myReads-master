@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 
 const Grid = (props) => {
   const style = {
-    gap: props.gap ? `${props.gap}px` : '0',
+    columnGap: props.columnGap ? `${props.columnGap}px` : '0',
+    rowGap: props.rowGap ? `${props.rowGap}px` : '0',
   };
 
   const col = props.col ? `grid-col-${props.col}` : '';
@@ -21,7 +22,8 @@ Grid.propTypes = {
   col: PropTypes.number.isRequired,
   mdCol: PropTypes.number,
   smCol: PropTypes.number,
-  gap: PropTypes.number,
+  columnGap: PropTypes.number,
+  rowGap: PropTypes.number,
 };
 
 export default Grid;

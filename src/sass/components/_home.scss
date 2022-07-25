@@ -5,12 +5,11 @@
   margin: 0;
   padding: 10px;
   line-height: 0;
-  background: #fff;
-  box-shadow: 0 0 10px #0000008a;
+  background-color: #482e4d;
   border-radius: 50%;
 
   a {
-    color: #333;
+    color: #fff;
     &:hover {
       color: $main-color;
     }

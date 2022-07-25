@@ -1,15 +1,19 @@
 .book {
-  box-shadow: $box-shadow;
-  padding: 5px;
+  background-color: #e9efff;
+  position: relative;
+  border: 10px solid #e9efff;
+  
+
   .book-title {
     font-size: 0.9em;
   }
+
   .book-authors {
     font-size: 0.8em;
     margin-bottom: 10px;
   }
   &-info {
-    padding: 15px;
+    padding: 15px 10px;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -24,20 +28,21 @@
   .book-top {
     position: relative;
     height: 250px;
+    width: 100%;
     img {
       width: 100%;
-      height: -webkit-fill-available;
+      height: 250px;
     }
   }
 
   .book-shelf-changer {
     position: absolute;
-    right: 0;
+    right: 0px;
     bottom: -10px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #60ac5d;
+    background-color: #482e4d;
     background-image: url('../../assets/icons/arrow-drop-down.svg');
     background-repeat: no-repeat;
     background-position: center;

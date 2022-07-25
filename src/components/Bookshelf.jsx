@@ -3,23 +3,18 @@ import PropTypes from 'prop-types';
 
 import Book from './Book';
 import Grid from './Grid';
-import Loading from './Loader';
+// import Loading from './Loader';
 
-import { useGlobalContext } from '../context';
-
-const Bookshelf = (props) => {
-  const { books, loading, changeShelf } = useGlobalContext();
-  const booksCategory = books.filter((book) => book.shelf === props.category);
-
-  if (loading) return <Loading />;
+const Bookshelf = ({ books, title, changeShelf }) => {
+  // if (loading) return <Loading />;
 
   return (
     <div className='bookshelf'>
-      <h3 className='bookshelf-title'>{props.title}</h3>
+      <h3 className='bookshelf-title'>{title}</h3>
       <div className='bookshelf-books'>
         <div className='books-grid'>
-          <Grid col={5} mdCol={3} smCol={2} gap={20}>
-            {booksCategory.map((item) => (
+          <Grid col={5} mdCol={3} smCol={2} columnGap={20} rowGap={40}>
+            {books.map((item) => (
               <Book key={item.id} {...item} changeShelf={changeShelf} />
             ))}
           </Grid>

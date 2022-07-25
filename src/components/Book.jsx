@@ -1,18 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Book = (book) => {
+const Book = ({ book, changeSelf }) => {
   return (
     <div className='book'>
       <div className='book-top'>
         <img src={book.imageLinks && book.imageLinks.thumbnail} alt='' />
         <div className='book-shelf-changer'>
           <select
-            onChange={(e) => {
-              console.log(e.target.value);
-              book.changeShelf(book, e.target.value);
-            }}
-            value={book.category ? book.category : 'none'}
+            defaultValue={book.shelf ? book.shelf : 'none'}
+            onChange={(e) => changeSelf(book, e.target.value)}
           >
             <option value='none' disabled>
               Move to...
@@ -27,12 +24,10 @@ const Book = (book) => {
       <div className='book-info'>
         <div className='book-title'>
           <Link to={`/books/${book.id}`}>
-            <span>{book.title}</span>
+            <span>author: {book.authors}</span>
           </Link>
         </div>
-        <h5 className='book-authors'>author: {book.authors}</h5>
-        <p className='book-language'>language: {book.language}</p>
-        <span>pages: {book.pageCount}</span>
+        <p>shelf: {book.shelf ? book.shelf : 'none'}</p>
       </div>
     </div>
   );

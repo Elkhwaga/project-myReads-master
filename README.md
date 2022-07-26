@@ -22,18 +22,18 @@ Install my-project with npm
 ├── public
 │   ├── favicon.ico
 │   └── index.html
-└── src
+├──  src
 ├── assets
 │   ├── icon
 │   ├── add.svg
 │   ├── arrow-back.svg
 │   └── arrow-drop-down.svg
 │  └── images
-│   ├── loader.svg
 │   └── myread.jpg
 ├── components
 │   ├── Book.jsx
 │   ├── BookDetails.jsx
+│   ├── BookSearch.jsx
 │   ├── Bookshelf.jsx
 │   ├── Footer.jsx
 │   ├── Grid.jsx
@@ -46,16 +46,17 @@ Install my-project with npm
 │   ├── Home.jsx
 │   └── Search.jsx
 ├── pages
-│   └── Routes.jsx
+│   └── routes.jsx
 ├── sass
 │   ├── components
-│   ├──_book.scss
-│   ├──_bookdetails.scss
-│   ├──_footer.scss
-│   ├──_header.scss
-│   ├──_home.scss
-│   ├──_search.scss
-│   └──_section.scss
+│     ├──_book.scss
+│     ├──_bookdetails.scss
+│     ├──_footer.scss
+│     ├──_header.scss
+│     ├──_loader.scss
+│     ├──_home.scss
+│     ├──_search.scss
+│     └──_section.scss
 │   ├──_base.scss
 │   ├──_mixins.scss
 │   ├──_variables.scss
@@ -64,12 +65,10 @@ Install my-project with npm
 │   └── BooksAPI
 ├── App.js
 ├── context.js
-│   ├── add.svg
-│   ├── arrow-back.svg
-│   └── arrow-drop-down.svg
 ├── index.js
 ├── package.json
-└── README.md - This file.
+├── README.md - This file.
+└── yarn.lock
 ```
 
 Remember that good React design practice is to create new JS files for each component and use import/require statements to include them where they are needed.

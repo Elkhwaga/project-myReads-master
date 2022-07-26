@@ -1,0 +1,102 @@
+.loader {
+  @include flex(center, center);
+  min-height: 100vh;
+  background-color: $main-color;
+
+  .wrapper {
+    position: relative;
+    width: 100%;
+    @include flex(center, center);
+
+    .ring {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      margin: -30px;
+      border-radius: 50%;
+      border: 4px solid transparent;
+      border-top: 4px solid $light-green;
+      animation: animate 4s linear infinite;
+
+      @keyframes animate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      &::before {
+        position: absolute;
+        content: '';
+        top: 12px;
+        right: 12px;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        background-color: $light-green;
+        box-shadow: 0 0 0 5px #3aafa933, 0 0 0 10px #3aafa922,
+          0 0 0 20px #3aafa911, 0 0 20px #3aafa9, 0 0 50px #3aafa9;
+      }
+
+      &:nth-child(2) {
+        &::before {
+          position: absolute;
+          content: '';
+          top: initial;
+          left: 12px;
+          bottom: 12px;
+          border-radius: 50%;
+          width: 15px;
+          height: 15px;
+          background-color: $dark-white;
+          box-shadow: 0 0 0 5px #def2a133, 0 0 0 10px #def2a122,
+            0 0 0 20px #def2a111, 0 0 20px #def2a1, 0 0 50px #def2a1;
+        }
+        animation: animate2 4s linear infinite;
+        animation-delay: -1s;
+        border-top: 4px solid transparent;
+        border-left: 4px solid $dark-white;
+
+        @keyframes animate2 {
+          0% {
+            transform: rotate(360deg);
+          }
+          100% {
+            transform: rotate(0deg);
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        &::before {
+          position: absolute;
+          content: '';
+          top: initial;
+          left: 12px;
+          bottom: 12px;
+          border-radius: 50%;
+          width: 15px;
+          height: 15px;
+          background-color: $white-color;
+          box-shadow: 0 0 0 5px #feffff33, 0 0 0 10px #feffff22,
+            0 0 0 20px #feffff11, 0 0 20px #feffff, 0 0 50px #feffff;
+        }
+        animation: animate2 4s linear infinite;
+        animation-delay: -3s;
+        border-top: 4px solid transparent;
+        border-left: 4px solid $white-color;
+        position: absolute;
+        top: -66.66px;
+      }
+    }
+    p {
+      position: absolute;
+      color: $white-color;
+      font-size: 1.8em;
+      bottom: -100px;
+      letter-spacing: 0.2em;
+    }
+  }
+}

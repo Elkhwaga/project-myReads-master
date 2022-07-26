@@ -5,13 +5,13 @@
   margin: 0;
   padding: 10px;
   line-height: 0;
-  background-color: #482e4d;
+  background-color: $second-color;
   border-radius: 50%;
 
   a {
     color: #fff;
     &:hover {
-      color: $main-color;
+      color: $dark-white;
     }
   }
 }

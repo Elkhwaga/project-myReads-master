@@ -1,10 +1,11 @@
 import React, { useState, useContext, useEffect, createContext } from 'react';
-import * as BookAPI from './BooksAPI';
+import * as BookAPI from './utils/BooksAPI';
 const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
   const [books, setBooks] = useState([]);
   const [query, setQuery] = useState('');
+  const [loading, setLoading] = useState(false);
   const [textMessage, settextMessage] = useState('');
   const [mapOfId, setMapOfId] = useState(new Map());
   const [submergedBooks, setSubMergedBooks] = useState([]);
@@ -13,8 +14,13 @@ const AppProvider = ({ children }) => {
 
   useEffect(() => {
     BookAPI.getAll().then((data) => {
-      setBooks(data);
-      setMapOfId(createMapOfBooks(data));
+      if (data) {
+        setLoading(false);
+        setBooks(data);
+        setMapOfId(createMapOfBooks(data));
+      } else {
+        setLoading(true);
+      }
     });
   }, []);
 
@@ -68,9 +74,11 @@ const AppProvider = ({ children }) => {
                 return booksSearch;
               })
             );
+            setLoading(false);
             setshowSearchPage(true);
           }
         } else {
+          setLoading(true);
           setBooksFromSearch([]);
         }
       });
@@ -79,7 +87,7 @@ const AppProvider = ({ children }) => {
     return () => {
       clearSearch = false;
       setBooksFromSearch([]);
-      settextMessage('Plase enter somting');
+      settextMessage('Please search for anything.');
     };
   }, [books, query]);
 
@@ -94,6 +102,7 @@ const AppProvider = ({ children }) => {
         submergedBooks,
         showSearchPage,
         textMessage,
+        loading,
       }}
     >
       {children}

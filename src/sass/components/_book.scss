@@ -2,7 +2,7 @@
   background-color: #e9efff;
   position: relative;
   border: 10px solid #e9efff;
-  
+  box-shadow: $box-shadow-card;
 
   .book-title {
     font-size: 0.9em;
@@ -42,7 +42,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #482e4d;
+    background-color: $second-color;
     background-image: url('../../assets/icons/arrow-drop-down.svg');
     background-repeat: no-repeat;
     background-position: center;

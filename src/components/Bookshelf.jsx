@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 import Book from './Book';
 import Grid from './Grid';
-// import Loading from './Loader';
+import Loading from './Loader';
 
-const Bookshelf = ({ books, title, changeShelf }) => {
-  // if (loading) return <Loading />;
+const Bookshelf = ({ books, title, changeShelf, loading }) => {
+  if (loading) return <Loading />;
 
   return (
     <div className='bookshelf'>
@@ -14,8 +14,8 @@ const Bookshelf = ({ books, title, changeShelf }) => {
       <div className='bookshelf-books'>
         <div className='books-grid'>
           <Grid col={5} mdCol={3} smCol={2} columnGap={20} rowGap={40}>
-            {books.map((item) => (
-              <Book key={item.id} {...item} changeShelf={changeShelf} />
+            {books.map((book) => (
+              <Book key={book.id} book={book} changeShelf={changeShelf} />
             ))}
           </Grid>
         </div>

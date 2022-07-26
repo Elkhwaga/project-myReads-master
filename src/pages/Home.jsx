@@ -8,9 +8,12 @@ import Helmet from '../components/Helmet';
 import Header from '../components/Header';
 import Section from '../components/Section';
 import Bookshelf from '../components/Bookshelf';
+import Footer from '../components/Footer';
+import Loader from '../components/Loader';
 
 const Home = () => {
-  const { books, changeShelf } = useGlobalContext();
+  const { books, changeShelf, loading } = useGlobalContext();
+  if (loading) return <Loader />;
   const currentlyReading = books.filter(
     (book) => book.shelf === 'currentlyReading'
   );
@@ -40,6 +43,7 @@ const Home = () => {
           </Link>
         </div>
       </Section>
+      <Footer color='#2b7a78' />
     </Helmet>
   );
 };

@@ -1,11 +1,14 @@
 import React from 'react';
 
-import LoaderImg from '../assets/images/loader.svg';
-
 const Loader = () => {
   return (
-    <div className='loader flex flex-c'>
-      <img src={LoaderImg} alt='loader' />
+    <div className='loader'>
+      <div className='wrapper'>
+        <div className='ring'></div>
+        <div className='ring'></div>
+        <div className='ring'></div>
+        <p>loading...</p>
+      </div>
     </div>
   );
 };

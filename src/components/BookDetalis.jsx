@@ -1,20 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import Section, { SectionBody } from './Section';
 
-import Loading from './Loader';
 import Helmet from './Helmet';
 import Grid from './Grid';
-
+import Footer from './Footer';
 import * as BookApi from '../utils/BooksAPI';
 import { FaArrowLeft } from 'react-icons/fa';
+import Loader from './Loader';
 
 const BookDetails = () => {
   const { id } = useParams();
   console.log(id);
   const [loading, setLoading] = useState(false);
   const [book, setBook] = useState([]);
-
   useEffect(() => {
     setLoading(true);
     async function getBookDetails() {
@@ -35,12 +33,12 @@ const BookDetails = () => {
     getBookDetails();
   }, [id]);
 
-  if (loading) return <Loading />;
+  if (loading) return <Loader />;
 
   return (
     <Helmet title='Book Detalis'>
-      <Section>
-        <SectionBody>
+      <section className='book-detalis container'>
+        <div className='book-detalis-body'>
           <Link to='/' className='close'>
             <FaArrowLeft size={22} />
           </Link>
@@ -73,8 +71,9 @@ const BookDetails = () => {
               </h5>
             </div>
           </Grid>
-        </SectionBody>
-      </Section>
+        </div>
+      </section>
+      <Footer color='#17252a' />
     </Helmet>
   );
 };

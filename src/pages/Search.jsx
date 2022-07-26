@@ -6,22 +6,26 @@ import { FaChevronLeft } from 'react-icons/fa';
 import Helmet from '../components/Helmet';
 import Grid from '../components/Grid';
 import Section from '../components/Section';
-import Book from '../components/Book';
+import BookSearch from '../components/BookSearch';
+import Footer from '../components/Footer';
+import Loader from '../components/Loader';
 
 const Search = (props) => {
   const {
     query,
     setQuery,
     submergedBooks,
-    changeSelf,
+    changeShelf,
     showSearchPage,
     textMessage,
+    loading,
   } = useGlobalContext();
 
   const searchText = useRef('');
 
   useEffect(() => searchText.current.focus(), []);
 
+  if (loading) return <Loader />;
   return (
     <Helmet title='Search'>
       <div className='search'>
@@ -43,14 +47,19 @@ const Search = (props) => {
           <Grid col={5} md={3} sm={2} columnGap={20} rowGap={40}>
             {showSearchPage ? (
               submergedBooks.map((book) => (
-                <Book key={book.id} book={book} changeSelf={changeSelf} />
+                <BookSearch
+                  key={book.id}
+                  book={book}
+                  changeShelf={changeShelf}
+                />
               ))
             ) : (
-              <p className='text-center'>{textMessage}</p>
+              <p className='text-center message'>{textMessage}</p>
             )}
           </Grid>
         </Section>
       </div>
+      <Footer color='#17252a' />
     </Helmet>
   );
 };

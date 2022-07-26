@@ -40,7 +40,7 @@ header {
   -------------------------------*/
   nav {
     @include flex(center, space-between);
-    background-color: #32364a;
+    background-color: $second-color;
     position: fixed;
     top: 0;
     left: 0;
@@ -74,6 +74,7 @@ header {
       @include tablet {
         display: block;
         font-size: 2.5rem;
+        color: $white-color;
       }
     }
 
@@ -91,7 +92,7 @@ header {
       @include tablet {
         @include flex(center, center);
         flex-direction: column;
-        background-color: #fff;
+        background-color: $second-color;
         position: absolute;
         left: 0;
         top: 0;
@@ -113,7 +114,7 @@ header {
           font-size: 2.5rem;
           width: 50px;
           height: 50px;
-          background: $main-color;
+          background-color: #32364a;
           color: #fff;
           border-radius: 50%;
         }
@@ -123,13 +124,17 @@ header {
         a {
           font-size: 1.4rem;
           color: #fff;
+          @include tablet {
+            color: $white-color;
+            font-size: 2.5em;
+          }
         }
         &.active {
           color: $main-color;
           font-weight: 600;
         }
         a:hover {
-          color: $main-color;
+          color: $dark-white;
         }
       }
     }
@@ -142,6 +147,9 @@ header {
         a {
           @include flex(center, flex-start);
           gap: 15px;
+          &:hover {
+            color: $dark-white;
+          }
         }
       }
 

@@ -27,6 +27,7 @@ const Book = ({ book, changeShelf }) => {
             <span>author: {book.authors}</span>
           </Link>
         </div>
+        <p>shelf: {book.shelf ? book.shelf : 'none'}</p>
       </div>
     </div>
   );

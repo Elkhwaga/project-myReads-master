@@ -1,15 +1,20 @@
 $main-bg: #fff;
-$main-color: rgb(143, 7, 181);
+$main-color: #17252a;
+$second-color: #2b7a78;
+$light-green: #3aafa9;
+$dark-white: #def2a1;
+$white-color: #feffff;
 // $main-color: #0c1022;
-$header-overlay: rgba(0, 0, 0, 0.4);
+$header-overlay: rgba(0, 0, 0, 0.6);
 
 $header-height: 150px;
 $header-tablet-height: 70px;
 $header-mobile-height: 40px;
 $header-shrink-height: 70px;
 
-$box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-$box-shadow-footer: rgba(149, 157, 165, 0.2) 0px -8px 24px;
+$box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+$box-shadow-footer: rgba(0, 0, 0, 0.2) 0px -8px 24px;
+$box-shadow-card: rgba(0, 0, 0, 0.5) 0 0 10px;
 
 $mobile-width: 600px;
 $tablet-width: 1024px;

@@ -1,10 +1,10 @@
 # Udacity FEND MyReads Project
 
--The app consists of two pages: the main page and the search page.
--The main page shows 4 shelves with books.
--Clicking on + icon on the main page links to search page, where more books may be added to your shelves.
--You can assign the books to shelves, both from the search page and the homepage.
--You can also click on the book title to go to the View More About Book page
+- The app consists of two pages: the main page and the search page.
+- The main page shows 4 shelves with books.
+- Clicking on + icon on the main page links to search page, where more books may be added to your shelves.
+- You can assign the books to shelves, both from the search page and the homepage.
+- You can also click on the book title to go to the View More About Book page
 
 ## Installation
 
